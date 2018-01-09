@@ -33,7 +33,7 @@ $header[] = "Content-Type: application/json";
 						array (
 							"image" => array (
 								"source" => array (
-									"imageUri" => "http://139.59.123.8/chtChatBot/nino0109/".$objID.".jpeg"
+									"imageUri" => "http://139.59.123.8/chtChatBot/makoto_linebot/".$objID.".jpeg"
 								)
 							),
 							"features" => array (
