@@ -124,7 +124,7 @@
 					array (
 						"type" => "image",
 						"originalContentUrl" => $pictureurl,
-						"previewImageUrl" => $pictureurl
+						"previewImageUrl" => "https://www.nasa.gov/sites/default/themes/NASAPortal/images/feed.png"
 					)
 				)
 			);
