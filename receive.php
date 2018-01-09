@@ -16,7 +16,7 @@ $myfile = fopen("log.txt","w+") or die("Unable to open file!"); //設定一個lo
 			$ch = curl_init($url);
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 			curl_setopt($ch, CURLOPT_HTTPHEADER, array(
-				"Authorization: Bearer fmUCBqFv8uF0YAIfJUE2uEtUFNnhqP/Vd5IqdgnKYPSyYC7/rqsszpwRMjCRrAyk2pbzTMz1NP77A0AOlQQN0JMIeUr6gCEmp2y9aSHW2klseVMC9/Om9yBOXoBKOriG+2s0r+VOUN3+Hl92wzXCNwdB04t89/1O/w1cDnyilFU=";
+				"Authorization: Bearer fmUCBqFv8uF0YAIfJUE2uEtUFNnhqP/Vd5IqdgnKYPSyYC7/rqsszpwRMjCRrAyk2pbzTMz1NP77A0AOlQQN0JMIeUr6gCEmp2y9aSHW2klseVMC9/Om9yBOXoBKOriG+2s0r+VOUN3+Hl92wzXCNwdB04t89/1O/w1cDnyilFU=",
 			));
 				
 			$json_content = curl_exec($ch);
