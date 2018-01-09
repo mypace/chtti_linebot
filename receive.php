@@ -116,14 +116,15 @@
  			$result = curl_exec($ch);
  			curl_close($ch); 
 		 	$json_obj = json_decode($result); //轉JSON格式
+		 	$pictureurl=$json_obj->pictureUrl;
 			$line_server_url = 'https://api.line.me/v2/bot/message/reply';
         		$response = array (
 				"replyToken" => $sender_replyToken,
 				"messages" => array (
 					array (
 						"type" => "image",
-						"originalContentUrl" => "$json_obj->pictureUrl",
-						"previewImageUrl" => "$json_obj->pictureUrl"
+						"originalContentUrl" => $pictureurl,
+						"previewImageUrl" => $pictureurl
 					)
 				)
 			);
