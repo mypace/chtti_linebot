@@ -1,4 +1,7 @@
 <?php
+
+/*
+ //存圖片
  $json_str = file_get_contents('php://input'); //接收REQUEST的BODY
  $json_obj = json_decode($json_str); //轉JSON格式
 
@@ -37,8 +40,8 @@ $imagefile = fopen($objID.".jpeg", "w+") or die("Unable to open file!"); //設�
  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);                                                                                                   
  $result = curl_exec($ch);
  curl_close($ch); 
+*/
 
-/*
 //switch case
  $json_str = file_get_contents('php://input'); //接收REQUEST的BODY
  $json_obj = json_decode($json_str); //轉JSON格式
@@ -157,14 +160,14 @@ $imagefile = fopen($objID.".jpeg", "w+") or die("Unable to open file!"); //設�
  			$result = curl_exec($ch2);
  			curl_close($ch2); 
 		 	$json_obj = json_decode($result); //轉JSON格式
-		 	$pictureurl=$json_obj->pictureUrl;
+		 	$pictureurl="https".substr($json_obj->pictureUrl,4);
 			$line_server_url = 'https://api.line.me/v2/bot/message/reply';
         		$response = array (
 				"replyToken" => $sender_replyToken,
 				"messages" => array (
 					array (
 						"type" => "image",
-						"originalContentUrl" => "https://www.w3schools.com/css/paris.jpg",
+						"originalContentUrl" => $pictureurl,
 						"previewImageUrl" => "https://www.nasa.gov/sites/default/themes/NASAPortal/images/feed.png"
 					)
 				)
@@ -190,7 +193,7 @@ fwrite($myfile, "\xEF\xBB\xBF".$json_str.PHP_EOL.json_encode($response).PHP_EOL.
  curl_setopt($ch, CURLOPT_HTTPHEADER, $header);                                                                                                   
  $result = curl_exec($ch);
  curl_close($ch); 
-*/
+
 /*
 //Reply API
 $json_str = file_get_contents('php://input'); //接收REQUEST的BODY
