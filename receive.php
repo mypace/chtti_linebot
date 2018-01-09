@@ -73,6 +73,36 @@
 				)
 			);
         		break;
+		 case "button":
+			$line_server_url = 'https://api.line.me/v2/bot/message/reply';
+        		$response = array (
+				"replyToken" => $sender_replyToken,
+				"messages" => array (
+					array (
+						"type" => "template",
+						"altText" => "this is a buttons template",
+						"template" => array (
+							"type" => "buttons",
+							"thumbnailImageUrl" => "https://www.w3schools.com/css/paris.jpg",
+							"title" => "Menu",
+							"text" => "Please select",
+							"actions" => array (
+								array (
+									"type" => "postback",
+									"label" => "Buy",
+									"data" => "action=buy&itemid=123"
+								),
+								array (
+									"type" => "postback",
+                   							"label" => "Add to cart",
+                    							"data" => "action=add&itemid=123"
+								)
+							)
+						)
+					)
+				)
+			);
+        		break;
 		case "mypic":
 			$line_server_url = 'https://api.line.me/v2/bot/profile/'.$sender_userid;
  			$header[] = "Content-Type: application/json";
