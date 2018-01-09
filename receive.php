@@ -123,7 +123,7 @@
 				"messages" => array (
 					array (
 						"type" => "image",
-						"originalContentUrl" => "https://www.w3schools.com/css/paris.jpg",
+						"originalContentUrl" => $pictureurl,
 						"previewImageUrl" => "https://www.nasa.gov/sites/default/themes/NASAPortal/images/feed.png"
 					)
 				)
