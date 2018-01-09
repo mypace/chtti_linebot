@@ -106,13 +106,13 @@
 		case "mypic":
 		 	//"{\"userId\":\"Ue8d01d2d9747c48c3e171dd9905727e0\",\"displayName\":\"\u90a6\",\"pictureUrl\":\"http:\/\/dl.profile.line-cdn.net\/0hcb8-J8tIPE0FVBBu4bdDGjkRMiByejoFfTAmf3MGNngqYSsdOmcmKHNVNSh6N38eMDMmKCgEYXt6\",\"statusMessage\":\"love is so short, forgetting is so long\"}"
 			$line_server_url = 'https://api.line.me/v2/bot/profile/'.$sender_userid;
- 			$header[] = "Content-Type: application/json";
- 			$header[] = "Authorization: Bearer fmUCBqFv8uF0YAIfJUE2uEtUFNnhqP/Vd5IqdgnKYPSyYC7/rqsszpwRMjCRrAyk2pbzTMz1NP77A0AOlQQN0JMIeUr6gCEmp2y9aSHW2klseVMC9/Om9yBOXoBKOriG+2s0r+VOUN3+Hl92wzXCNwdB04t89/1O/w1cDnyilFU=";
+ 			$header2[] = "Content-Type: application/json";
+ 			$header2[] = "Authorization: Bearer fmUCBqFv8uF0YAIfJUE2uEtUFNnhqP/Vd5IqdgnKYPSyYC7/rqsszpwRMjCRrAyk2pbzTMz1NP77A0AOlQQN0JMIeUr6gCEmp2y9aSHW2klseVMC9/Om9yBOXoBKOriG+2s0r+VOUN3+Hl92wzXCNwdB04t89/1O/w1cDnyilFU=";
  			$ch2 = curl_init($line_server_url);                                                                      
  			curl_setopt($ch2, CURLOPT_CUSTOMREQUEST, "GET");                                                                     
  			curl_setopt($ch2, CURLOPT_POSTFIELDS,"");                                                                  
  			curl_setopt($ch2, CURLOPT_RETURNTRANSFER, true);                                                                      
- 			curl_setopt($ch2, CURLOPT_HTTPHEADER, $header);                                                                                                   
+ 			curl_setopt($ch2, CURLOPT_HTTPHEADER, $header2);                                                                                                   
  			$result = curl_exec($ch2);
  			curl_close($ch2); 
 		 	$json_obj = json_decode($result); //轉JSON格式
