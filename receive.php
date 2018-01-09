@@ -104,6 +104,7 @@
 			);
         		break;
 		case "mypic":
+		 	//"{\"userId\":\"Ue8d01d2d9747c48c3e171dd9905727e0\",\"displayName\":\"\u90a6\",\"pictureUrl\":\"http:\/\/dl.profile.line-cdn.net\/0hcb8-J8tIPE0FVBBu4bdDGjkRMiByejoFfTAmf3MGNngqYSsdOmcmKHNVNSh6N38eMDMmKCgEYXt6\",\"statusMessage\":\"love is so short, forgetting is so long\"}"
 			$line_server_url = 'https://api.line.me/v2/bot/profile/'.$sender_userid;
  			$header[] = "Content-Type: application/json";
  			$header[] = "Authorization: Bearer fmUCBqFv8uF0YAIfJUE2uEtUFNnhqP/Vd5IqdgnKYPSyYC7/rqsszpwRMjCRrAyk2pbzTMz1NP77A0AOlQQN0JMIeUr6gCEmp2y9aSHW2klseVMC9/Om9yBOXoBKOriG+2s0r+VOUN3+Hl92wzXCNwdB04t89/1O/w1cDnyilFU=";
@@ -115,9 +116,21 @@
  			$result = curl_exec($ch);
  			curl_close($ch); 
 		 	$json_obj = json_decode($result); //轉JSON格式
-		 	$myfile2 = fopen("log2.txt","w+") or die("Unable to open file!"); //設定一個log.txt 用來印訊息
- 			fwrite($myfile2, "\xEF\xBB\xBF".json_encode($result)); //在字串前加入\xEF\xBB\xBF轉成utf8格式
- 			fclose($myfile2);
+			$line_server_url = 'https://api.line.me/v2/bot/message/reply';
+        		$response = array (
+				"replyToken" => $sender_replyToken,
+				"messages" => array (
+					array (
+						"type" => "image",
+						"originalContentUrl" => "$json_obj->pictureUrl",
+						"previewImageUrl" => "$json_obj->pictureUrl"
+					)
+				)
+			);
+		 	
+		 	//$myfile2 = fopen("log2.txt","w+") or die("Unable to open file!"); //設定一個log.txt 用來印訊息
+ 			//fwrite($myfile2, "\xEF\xBB\xBF".json_encode($result)); //在字串前加入\xEF\xBB\xBF轉成utf8格式
+ 			//fclose($myfile2);
         		break;
  }
 
